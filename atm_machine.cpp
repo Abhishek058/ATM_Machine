@@ -45,14 +45,16 @@ int main()
                 else if(option == 2){
                     cout<<"Amount you want to deposit: ";
                     cin>>deposit;
-                    balanceArr[index] += deposit;
                     cout<<"Available Balance: "<<balanceArr[index]<<endl;
+                    balanceArr[index] += deposit;
+                    cout<<"Updated Balance: "<<balanceArr[index]<<endl;
                 }
                 else if(option == 3){
                     cout<<"Amount you want to withdraw: ";
                     cin>>withdraw;
-                    balanceArr[index] -= deposit;
                     cout<<"Available Balance: "<<balanceArr[index]<<endl;
+                    balanceArr[index] -= deposit;
+                    cout<<"Updated Balance: "<<balanceArr[index]<<endl;
                 }
             }
             else{
