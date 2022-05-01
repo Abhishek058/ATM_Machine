@@ -48,7 +48,12 @@ int main()
                     balanceArr[index] += deposit;
                     cout<<"Available Balance: "<<balanceArr[index]<<endl;
                 }
-                
+                else if(option == 3){
+                    cout<<"Amount you want to withdraw: ";
+                    cin>>withdraw;
+                    balanceArr[index] -= deposit;
+                    cout<<"Available Balance: "<<balanceArr[index]<<endl;
+                }
             }
             else{
                 cout<<"Incorrect Pin"<<endl;
