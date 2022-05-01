@@ -45,8 +45,10 @@ int main()
                 else if(option == 2){
                     cout<<"Amount you want to deposit: ";
                     cin>>deposit;
-                    
+                    balanceArr[index] += deposit;
+                    cout<<"Available Balance: "<<balanceArr[index]<<endl;
                 }
+                
             }
             else{
                 cout<<"Incorrect Pin"<<endl;
