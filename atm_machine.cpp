@@ -8,11 +8,27 @@ void showMenu(){
     cout<<"2. Deposit Money"<<endl;
     cout<<"3. Withdraw Money"<<endl;
     cout<<endl;
-    cout<<"***********************************************************************"<<endl;
+    cout<<"***********************************************************************"<<endl<<endl;
 }
 
 int main()
 {
     showMenu();
+    //Storing Account Credentials
+    int accNo, pass, option;
+    int accArr[10] = {4324, 1478, 4814, 7014, 3895, 5092, 7162, 4672, 6158, 1206};
+    string nameArr[10] = {"Abhishek", "Abhay", "Sujal", "Kanika", "Mohak", "Sidhi", "Abhiraj", "Meher", "Nidhi", "Harsh"};
+    int passArr[10] = {4234, 8741, 4184, 4107, 5983, 2905, 2617, 2764, 8516, 6021};
+    int BalanceArr[10] = {73720, 41653, 39568, 77508, 80199, 25312, 56400, 76229, 30718, 40398};
+
+    //Taking input for Account credentials
+    cout<<"Account Number: ";
+    cin>>accNo;
+    cout<<endl;
+    cout<<"ATM Pin: ";
+    cin>>pass;
+
+
+
     return 0;
 }
