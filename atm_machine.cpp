@@ -18,7 +18,7 @@ int main()
 {
     showMenu();
     // Storing Account Credentials
-    int accNo, pass, option, index;
+    int accNo, pass, option, index, deposit, withdraw;
     int accArr[10] = {4324, 1478, 4814, 7014, 3895, 5092, 7162, 4672, 6158, 1206};
     string nameArr[10] = {"Abhishek", "Abhay", "Sujal", "Kanika", "Mohak", "Sidhi", "Abhiraj", "Meher", "Nidhi", "Harsh"};
     int passArr[10] = {4234, 8741, 4184, 4107, 5983, 2905, 2617, 2764, 8516, 6021};
@@ -41,6 +41,11 @@ int main()
                 if(option == 1){
                     cout<<"Account number:          "<<"Name:              "<<"Available Balance:"<<endl;
                     cout<<"    "<<accArr[index]<<"                 "<<nameArr[index]<<"              "<<balanceArr[index]<<endl;
+                }
+                else if(option == 2){
+                    cout<<"Amount you want to deposit: ";
+                    cin>>deposit;
+                    
                 }
             }
             else{
