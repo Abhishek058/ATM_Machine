@@ -25,42 +25,63 @@ int main()
     int balanceArr[10] = {73720, 41653, 39568, 77508, 80199, 25312, 56400, 76229, 30718, 40398};
 
     // Taking input for Account credentials
-    cout << "Account Number: ";
-    cin >> accNo;
-    cout << endl;
-    for (int i = 0; i < 10; i++)
+    char op = 'y';
+
+    while (op == 'y' || op == 'Y')
     {
-        if (accNo == accArr[i])
+        cout << "Account Number: ";
+        cin >> accNo;
+        cout << endl;
+        for (int i = 0; i < 10; i++)
         {
-            index = i;
-            cout<<"ATM Pin: ";
-            cin>>pass;
-            if(pass = passArr[index]){
-                cout<<"What you want to do select option from menu: ";
-                cin>>option;
-                if(option == 1){
-                    cout<<"Account number:          "<<"Name:              "<<"Available Balance:"<<endl;
-                    cout<<"    "<<accArr[index]<<"                 "<<nameArr[index]<<"              "<<balanceArr[index]<<endl;
+            if (accNo == accArr[i])
+            {
+                index = i;
+                cout << "ATM Pin: ";
+                cin >> pass;
+                if (pass = passArr[index])
+                {
+                    cout << "What you want to do select option from menu: ";
+                    cin >> option;
+                    if (option == 1)
+                    {
+                        cout << "Account number:          "
+                             << "Name:              "
+                             << "Available Balance:" << endl;
+                        cout << "    " << accArr[index] << "                 " << nameArr[index] << "              " << balanceArr[index] << endl;
+                    }
+                    else if (option == 2)
+                    {
+                        cout << "Amount you want to deposit: ";
+                        cin >> deposit;
+                        cout << "Available Balance: " << balanceArr[index] << endl;
+                        balanceArr[index] += deposit;
+                        cout << "Updated Balance: " << balanceArr[index] << endl;
+                    }
+                    else if (option == 3)
+                    {
+                        cout << "Amount you want to withdraw: ";
+                        cin >> withdraw;
+                        if (withdraw > balanceArr[index])
+                        {
+                            cout << "Not sufficient balance, Try less amount"<<endl;
+                        }
+                        else
+                        {
+                            cout << "Available Balance: " << balanceArr[index] << endl;
+                            balanceArr[index] -= withdraw;
+                            cout << "Updated Balance: " << balanceArr[index] << endl;
+                        }
+                    }
                 }
-                else if(option == 2){
-                    cout<<"Amount you want to deposit: ";
-                    cin>>deposit;
-                    cout<<"Available Balance: "<<balanceArr[index]<<endl;
-                    balanceArr[index] += deposit;
-                    cout<<"Updated Balance: "<<balanceArr[index]<<endl;
+                else
+                {
+                    cout << "Incorrect Pin" << endl;
                 }
-                else if(option == 3){
-                    cout<<"Amount you want to withdraw: ";
-                    cin>>withdraw;
-                    cout<<"Available Balance: "<<balanceArr[index]<<endl;
-                    balanceArr[index] -= deposit;
-                    cout<<"Updated Balance: "<<balanceArr[index]<<endl;
-                }
-            }
-            else{
-                cout<<"Incorrect Pin"<<endl;
             }
         }
+        cout << "Do you want to continue: ";
+        cin >> op;
     }
     return 0;
 }
